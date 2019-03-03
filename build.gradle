@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+ext {
+    javaxVersion ='2.5'
+    odataVersion = '4.0.0'
+    lf4jVersion = '1.7.26'
+}
+
+group 'example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile("org.apache.olingo:odata-client-api:${odataVersion}")
+    compile("org.apache.olingo:odata-client-core:${odataVersion}")
+    compile("org.apache.olingo:odata-commons-api:${odataVersion}")
+    compile("org.apache.olingo:odata-commons-core:${odataVersion}")
+    compile("org.slf4j:slf4j-simple:${lf4jVersion}")
+}
